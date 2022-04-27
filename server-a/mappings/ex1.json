@@ -1,0 +1,11 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/ex1"
+    },
+    "response": {
+      "status": 200,
+      "bodyFileName": "ex1.json",
+      "transformers": ["body-transformer"]
+    }
+  }

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+
+  server-a:
+    image: wiremock/wiremock
+    ports:
+      - '8090:8080'
+    volumes:
+      - ./server-a:/home/wiremock
+      - ./extensions:/var/wiremock/extensions # enables response templating
+    command:
+      - "--verbose" # optional verbose logging
+      - "--extensions"                            # enables response templating
+      - "com.opentable.extension.BodyTransformer" #
+      
+  server-b:
+    image: wiremock/wiremock
+    ports:
+      - '8091:8080'
+    volumes:
+      - ./server-b:/home/wiremock
